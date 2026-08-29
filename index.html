@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padoserrurier — Serrurier Marseille 24h/24 7j/7 | Dépannage, Serrure, Porte Blindée</title>
+<meta name="description" content="Serrurier à Marseille disponible 24h/24 7j/7. Dépannage, ouverture de porte, changement de serrure, installation porte blindée. Devis gratuit, tarifs affichés avant intervention.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --text:#211E1A;
+    --ink:#15181F;
+    --gold:#B8862B;
+    --gold-light:#E8C77A;
+    --red:#B4392F;
+    --cream:#F7F2E7;
+    --border:#E7E1D2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    letter-spacing:0.3px;
+    line-height:1.15;
+    color:var(--ink);
+  }
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+  .section{padding:88px 0;}
+  .section-title{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:14px;}
+  .section-subtitle{font-size:1.05rem;color:#5a5648;max-width:640px;margin-bottom:48px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 28px;border-radius:4px;font-family:'Inter',sans-serif;
+    font-weight:700;font-size:1rem;cursor:pointer;border:2px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-red{background:var(--red);color:#fff;}
+  .btn-red:hover{box-shadow:0 10px 24px rgba(180,57,47,0.35);}
+  .btn-gold{background:var(--gold);color:#fff;}
+  .btn-gold:hover{box-shadow:0 10px 24px rgba(184,134,43,0.35);}
+  .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.75);}
+  .btn-outline:hover{background:rgba(255,255,255,0.12);}
+  .btn-ink{background:var(--ink);color:#fff;}
+  .btn-ink:hover{box-shadow:0 10px 24px rgba(21,24,31,0.3);}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:1000;
+    background:var(--ink);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .navbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1140px;margin:0 auto;
+  }
+  .logo{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:1.5rem;
+    color:#fff;letter-spacing:0.5px;display:flex;align-items:baseline;gap:6px;
+  }
+  .logo .accent{color:var(--gold-light);}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{color:#dcd8ca;font-weight:600;font-size:0.94rem;transition:color .2s ease;}
+  .nav-links a:hover{color:var(--gold-light);}
+  .nav-cta{display:flex;align-items:center;gap:12px;}
+  .nav-cta .btn{padding:10px 20px;font-size:0.92rem;border-radius:30px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+  .hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;}
+  .mobile-nav{
+    display:none;position:fixed;inset:0;background:var(--ink);z-index:2000;
+    flex-direction:column;padding:80px 32px 32px;gap:20px;
+  }
+  .mobile-nav a{color:#fff;font-size:1.2rem;font-weight:600;}
+  .mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:linear-gradient(150deg, var(--ink) 0%, #262b38 100%);
+    padding:96px 0 80px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 82% 20%, rgba(184,134,43,0.18), transparent 55%);
+  }
+  .hero-content{position:relative;max-width:720px;margin:0 auto;text-align:center;padding:0 24px;}
+  .urgency-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(180,57,47,0.15);border:1px solid rgba(180,57,47,0.5);
+    color:#ff9d8f;padding:8px 18px;border-radius:30px;font-weight:700;
+    font-size:0.85rem;letter-spacing:0.5px;margin-bottom:24px;
+  }
+  .urgency-badge .dot{width:8px;height:8px;border-radius:50%;background:#ff5b46;animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+  .hero h1{color:#fff;font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:18px;}
+  .hero h1 .gold{color:var(--gold-light);}
+  .hero-sub{color:#c7c3b6;font-size:1.15rem;max-width:580px;margin:0 auto 34px;}
+  .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:44px;}
+  .hero-buttons .btn{padding:16px 32px;font-size:1.05rem;}
+  .hero-stats{display:flex;justify-content:center;gap:0;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.12);padding-top:32px;}
+  .stat-chip{padding:0 32px;text-align:center;border-right:1px solid rgba(255,255,255,0.12);}
+  .stat-chip:last-child{border-right:none;}
+  .stat-chip .num{font-family:'Oswald',sans-serif;font-size:1.7rem;font-weight:700;color:var(--gold-light);}
+  .stat-chip .label{font-size:0.82rem;color:#a9a596;margin-top:2px;}
+
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .service-card{
+    border:1px solid var(--border);border-radius:10px;overflow:hidden;
+    background:#fff;transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,0.08);}
+  .service-top{height:6px;background:linear-gradient(90deg, var(--gold), var(--red));}
+  .service-body{padding:30px 26px;}
+  .service-icon{
+    width:52px;height:52px;border-radius:10px;background:var(--cream);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--gold);
+  }
+  .service-card h3{font-size:1.3rem;margin-bottom:8px;}
+  .service-card p{color:#5a5648;font-size:0.95rem;margin-bottom:16px;}
+  .price-tag{
+    display:inline-block;font-weight:700;color:var(--ink);
+    background:var(--cream);padding:6px 14px;border-radius:6px;font-size:0.9rem;margin-bottom:14px;
+  }
+  .service-link{display:block;font-weight:700;color:var(--red);font-size:0.92rem;}
+
+  /* TARIFS */
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:52px;}
+  .price-card{
+    border:1px solid var(--border);border-radius:10px;padding:32px 26px;background:#fff;
+    display:flex;flex-direction:column;position:relative;
+  }
+  .price-card.highlighted{border:2px solid var(--gold);box-shadow:0 14px 34px rgba(184,134,43,0.14);}
+  .badge-popular{
+    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:#fff;font-size:0.75rem;font-weight:700;
+    padding:6px 16px;border-radius:20px;white-space:nowrap;
+  }
+  .price-card h3{font-size:1.25rem;margin-bottom:4px;}
+  .price-card .sub{font-size:0.85rem;color:#8a8574;margin-bottom:14px;}
+  .price-value{font-family:'Oswald',sans-serif;font-size:2.1rem;font-weight:700;color:var(--ink);margin-bottom:16px;}
+  .price-value small{font-size:1rem;font-weight:500;color:#8a8574;}
+  .price-card ul{margin-bottom:6px;flex:1;}
+  .price-card ul li{padding:5px 0;font-size:0.9rem;color:#4a473d;}
+  .price-card ul li::before{content:"✓ ";color:var(--gold);font-weight:700;}
+
+  .price-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin-bottom:20px;}
+  table.price-table{width:100%;border-collapse:collapse;min-width:560px;}
+  table.price-table caption{
+    text-align:left;font-family:'Oswald',sans-serif;font-weight:600;font-size:1.1rem;
+    padding:18px 22px 4px;color:var(--ink);
+  }
+  table.price-table th,table.price-table td{padding:13px 22px;text-align:left;font-size:0.94rem;}
+  table.price-table thead th{background:var(--cream);color:var(--ink);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.4px;}
+  table.price-table tbody tr{border-top:1px solid var(--border);}
+  table.price-table td.price{font-weight:700;color:var(--ink);text-align:right;}
+  table.price-table td.mult{font-weight:700;color:var(--red);text-align:right;}
+  .pricing-note{color:#6b6758;font-size:0.92rem;margin-top:6px;}
+  .pricing-note strong{color:var(--ink);}
+  .legal-callout{
+    background:var(--cream);border-left:4px solid var(--gold);border-radius:6px;
+    padding:20px 24px;margin-top:32px;font-size:0.95rem;color:#4a473d;
+  }
+  .legal-callout strong{color:var(--ink);}
+
+  /* WHY */
+  .why-section{background:var(--ink);}
+  .why-section .section-title,.why-section .section-subtitle{color:#fff;}
+  .why-section .section-subtitle{color:#b6b2a3;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .why-card{padding:8px 0;}
+  .why-card .why-icon{color:var(--gold-light);font-family:'Oswald',sans-serif;font-weight:700;font-size:1.6rem;margin-bottom:10px;}
+  .why-card h3{color:#fff;font-size:1.1rem;margin-bottom:8px;}
+  .why-card p{color:#b6b2a3;font-size:0.92rem;}
+
+  /* ZONES */
+  .zones-section{background:var(--cream);}
+  .zone-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+  .zone-badge{padding:11px 22px;border-radius:30px;font-weight:700;font-size:0.92rem;color:#fff;background:var(--ink);}
+  .zone-badge.alt{background:var(--gold);}
+  .city-list{margin-top:28px;color:#4a473d;font-size:0.98rem;line-height:1.9;}
+  .city-list strong{color:var(--ink);}
+
+  /* CONTACT */
+  .contact-section{background:var(--ink);color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;}
+  .contact-section .section-title{color:#fff;}
+  .contact-section .section-subtitle{color:#b6b2a3;}
+  .contact-list{display:flex;flex-direction:column;gap:20px;margin-bottom:28px;}
+  .contact-item{display:flex;align-items:center;gap:14px;}
+  .contact-item .ic{
+    width:46px;height:46px;border-radius:8px;background:rgba(184,134,43,0.18);
+    display:flex;align-items:center;justify-content:center;color:var(--gold-light);flex-shrink:0;font-size:1.2rem;
+  }
+  .contact-item .label{font-size:0.8rem;color:#a9a596;text-transform:uppercase;letter-spacing:0.5px;}
+  .contact-item .val{font-size:1.05rem;font-weight:700;}
+  .contact-item a.val{color:#fff;}
+  .contact-item a.val:hover{color:var(--gold-light);}
+  .contact-card{
+    background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);
+    border-radius:10px;padding:30px;
+  }
+  .contact-card h3{color:#fff;font-size:1.2rem;margin-bottom:12px;}
+  .contact-card p{color:#b6b2a3;font-size:0.92rem;margin-bottom:22px;}
+  .contact-card .btn{width:100%;margin-bottom:12px;}
+  .id-block{margin-top:24px;font-size:0.82rem;color:#8a8574;line-height:1.8;}
+
+  /* FOOTER */
+  footer{background:#0f1117;color:#8a8574;padding:32px 0;text-align:center;font-size:0.85rem;}
+  footer a{color:#b6b2a3;text-decoration:underline;}
+  footer .foot-links{margin-top:8px;}
+  footer .foot-links a{margin:0 8px;}
+
+  @media(max-width:900px){
+    .services-grid,.pricing-grid,.why-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .nav-links,.nav-cta .btn-ink{display:none;}
+    .hamburger{display:flex;}
+    .mobile-nav.open{display:flex;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="navbar">
+    <a href="#accueil" class="logo">PADO<span class="accent">SERRURIER</span></a>
+    <nav class="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#zones">Zone d'intervention</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+33634252535" class="btn btn-red">📞 06 34 25 25 35</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <button class="mobile-close" id="mobile-close" aria-label="Fermer">✕</button>
+  <a href="#accueil">Accueil</a>
+  <a href="#services">Services</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#zones">Zone d'intervention</a>
+  <a href="#contact">Contact</a>
+  <a href="tel:+33634252535" class="btn btn-red">📞 Appeler</a>
+</div>
+
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <span class="urgency-badge"><span class="dot"></span>Disponible maintenant · 24h/24 · 7j/7</span>
+    <h1>Serrurier à Marseille,<br><span class="gold">intervention rapide</span> jour et nuit.</h1>
+    <p class="hero-sub">Dépannage, ouverture de porte, changement de serrure, installation de porte blindée. Devis gratuit par téléphone, tarifs annoncés avant intervention.</p>
+    <div class="hero-buttons">
+      <a href="tel:+33634252535" class="btn btn-red">📞 Appeler maintenant</a>
+      <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-chip"><div class="num">24/7</div><div class="label">Disponibilité</div></div>
+      <div class="stat-chip"><div class="num">100%</div><div class="label">Devis gratuit</div></div>
+      <div class="stat-chip"><div class="num">Marseille</div><div class="label">& alentours</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="section-title">Nos interventions</h2>
+    <p class="section-subtitle">Trois métiers, une seule urgence : vous remettre en sécurité rapidement, sans mauvaise surprise sur la facture.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-top"></div>
+        <div class="service-body">
+          <div class="service-icon">🔓</div>
+          <h3>Dépannage & Ouverture</h3>
+          <p>Porte claquée, clé perdue ou cassée dans la serrure, verrou bloqué. Intervention rapide, ouverture sans dégât privilégiée dès que possible.</p>
+          <span class="price-tag">À partir de 79 €</span>
+          <a href="#tarifs" class="service-link">Voir le détail des tarifs →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-top"></div>
+        <div class="service-body">
+          <div class="service-icon">🔑</div>
+          <h3>Changement de serrure</h3>
+          <p>Cylindre européen, serrure 3 points, serrure haute sécurité certifiée A2P. Fourniture et pose, toutes marques.</p>
+          <span class="price-tag">À partir de 90 €</span>
+          <a href="#tarifs" class="service-link">Voir le détail des tarifs →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-top"></div>
+        <div class="service-body">
+          <div class="service-icon">🛡️</div>
+          <h3>Porte blindée</h3>
+          <p>Installation de porte blindée A2P, blindage d'une porte existante, remplacement de serrure multipoints haute sécurité.</p>
+          <span class="price-tag">À partir de 1 200 €</span>
+          <a href="#tarifs" class="service-link">Voir le détail des tarifs →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tarifs" style="background:var(--cream);">
+  <div class="container">
+    <h2 class="section-title">Grille tarifaire</h2>
+    <p class="section-subtitle">Tarifs de référence 2026, positionnés dans la moyenne basse du marché marseillais après étude comparative. Le prix exact est toujours confirmé par téléphone avant tout déplacement.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Ouverture de porte</h3>
+        <div class="sub">Porte claquée, non verrouillée</div>
+        <div class="price-value">79 € <small>dès</small></div>
+        <ul>
+          <li>Intervention en journée</li>
+          <li>Sans dégât si possible</li>
+          <li>Diagnostic inclus</li>
+        </ul>
+      </div>
+      <div class="price-card highlighted">
+        <span class="badge-popular">Le plus demandé</span>
+        <h3>Porte verrouillée</h3>
+        <div class="sub">Clé perdue ou cassée</div>
+        <div class="price-value">129 € <small>dès</small></div>
+        <ul>
+          <li>Ouverture fine (crochetage)</li>
+          <li>Sans destruction si possible</li>
+          <li>Devis annoncé avant intervention</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Serrure haute sécurité</h3>
+        <div class="sub">Porte blindée verrouillée</div>
+        <div class="price-value">179 € <small>dès</small></div>
+        <ul>
+          <li>Matériel adapté A2P</li>
+          <li>Techniciens expérimentés</li>
+          <li>Devis annoncé avant intervention</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <caption>Majorations horaires — dépannage & ouverture de porte</caption>
+        <thead><tr><th>Créneau</th><th>Majoration</th></tr></thead>
+        <tbody>
+          <tr><td>Jour (8h – 20h)</td><td class="mult">Tarif de base</td></tr>
+          <tr><td>Soirée (20h – 22h)</td><td class="mult">+ 25 %</td></tr>
+          <tr><td>Nuit (22h – 8h)</td><td class="mult">+ 50 %</td></tr>
+          <tr><td>Dimanche & jours fériés (8h – 22h)</td><td class="mult">+ 50 %</td></tr>
+          <tr><td>Nuit profonde, dimanche ou férié (22h – 8h)</td><td class="mult">+ 80 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-note">Majorations calculées sur le tarif de base de l'intervention, annoncées avant tout déplacement — pas d'effet de surprise.</p>
+
+    <div class="price-table-wrap" style="margin-top:36px;">
+      <table class="price-table">
+        <caption>Changement de serrure — fourniture et pose</caption>
+        <thead><tr><th>Prestation</th><th>Prix</th></tr></thead>
+        <tbody>
+          <tr><td>Cylindre européen standard</td><td class="price">90 € – 150 €</td></tr>
+          <tr><td>Serrure 3 points standard</td><td class="price">180 € – 320 €</td></tr>
+          <tr><td>Serrure haute sécurité (A2P, Vachette, Bricard, Fichet…)</td><td class="price">280 € – 450 €</td></tr>
+          <tr><td>Serrure multipoints porte blindée</td><td class="price">350 € – 600 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="price-table-wrap" style="margin-top:36px;">
+      <table class="price-table">
+        <caption>Porte blindée</caption>
+        <thead><tr><th>Prestation</th><th>Prix</th></tr></thead>
+        <tbody>
+          <tr><td>Blindage d'une porte existante</td><td class="price">à partir de 1 200 €</td></tr>
+          <tr><td>Porte blindée A2P BP1 (entrée de gamme)</td><td class="price">à partir de 1 600 €</td></tr>
+          <tr><td>Porte blindée A2P BP2 / BP3 (haute sécurité)</td><td class="price">2 200 € – 3 500 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-note">Prix installation posée, hors options (serrure connectée, entrebâilleur, judas…). <strong>Devis gratuit et sur mesure</strong> établi avant toute commande.</p>
+
+    <div class="legal-callout">
+      <strong>Nos engagements anti-arnaque :</strong> prix communiqué par téléphone avant le déplacement, devis écrit obligatoire au-delà de 150 € TTC (conformément à la réglementation en vigueur), aucune intervention sans votre accord préalable sur le tarif.
+    </div>
+  </div>
+</section>
+
+<section class="section why-section">
+  <div class="container">
+    <h2 class="section-title">Pourquoi choisir Padoserrurier</h2>
+    <p class="section-subtitle">Un artisan local, joignable à toute heure, avec une politique de prix transparente.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">24/7</div>
+        <h3>Disponible en permanence</h3>
+        <p>Astreinte 24h/24, 7j/7, week-ends et jours fériés compris. Une urgence n'attend pas.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Intervention rapide</h3>
+        <p>Déplacement sous 30 minutes en moyenne sur Marseille et sa proche périphérie.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">€</div>
+        <h3>Devis gratuit et transparent</h3>
+        <p>Prix annoncé au téléphone avant déplacement. Devis écrit dès 150 € TTC, comme l'exige la loi.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Artisan déclaré</h3>
+        <p>Entreprise immatriculée, SIRET communiqué sur simple demande et sur toutes les factures.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛠</div>
+        <h3>Sans destruction si possible</h3>
+        <p>Techniques d'ouverture fine privilégiées avant toute solution destructive.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📋</div>
+        <h3>Pas de mauvaise surprise</h3>
+        <p>Le prix annoncé avant l'intervention est celui de la facture finale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section zones-section" id="zones">
+  <div class="container">
+    <h2 class="section-title">Zone d'intervention</h2>
+    <p class="section-subtitle">Basé à Marseille, intervention sur toute la ville et sa proche périphérie.</p>
+    <div class="zone-row">
+      <span class="zone-badge">Marseille — tous arrondissements</span>
+      <span class="zone-badge alt">Aix-en-Provence</span>
+      <span class="zone-badge alt">Aubagne</span>
+    </div>
+    <div class="zone-row">
+      <span class="zone-badge alt">La Ciotat</span>
+      <span class="zone-badge alt">Cassis</span>
+      <span class="zone-badge alt">Marignane</span>
+      <span class="zone-badge alt">Vitrolles</span>
+      <span class="zone-badge alt">Allauch</span>
+    </div>
+    <p class="city-list"><strong>Également desservi :</strong> Septèmes-les-Vallons · Plan-de-Campagne · Gémenos · Carnoux-en-Provence · Ceyreste · Roquevaire · La Penne-sur-Huveaune</p>
+  </div>
+</section>
+
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <h2 class="section-title">Contact & urgence</h2>
+        <p class="section-subtitle">Une urgence ? Appelez directement. Pour une demande de devis non urgente, écrivez par mail.</p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="ic">📞</div>
+            <div><div class="label">Téléphone — 24h/24</div><a class="val" href="tel:+33634252535">06 34 25 25 35</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="ic">✉️</div>
+            <div><div class="label">Email</div><a class="val" href="mailto:Padovani.serrurerie@gmail.com">Padovani.serrurerie@gmail.com</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="ic">📍</div>
+            <div><div class="label">Zone d'intervention</div><span class="val">Marseille & alentours</span></div>
+          </div>
+        </div>
+        <div class="id-block">
+          Padoserrurier — Louis Padovani<br>
+          SIRET : 104 493 812 00010
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Besoin d'un serrurier maintenant ?</h3>
+        <p>Appelez directement pour une prise en charge immédiate et un tarif annoncé avant tout déplacement.</p>
+        <a href="tel:+33634252535" class="btn btn-red">📞 Appeler le 06 34 25 25 35</a>
+        <a href="mailto:Padovani.serrurerie@gmail.com" class="btn btn-ink">✉️ Envoyer un email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Padoserrurier — Louis Padovani — SIRET 104 493 812 00010</div>
+  <div class="foot-links"><a href="mentions-legales.html">Mentions légales</a></div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileClose = document.getElementById('mobile-close');
+  if(hamburger){hamburger.addEventListener('click', () => mobileNav.classList.add('open'));}
+  if(mobileClose){mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));}
+  document.querySelectorAll('.mobile-nav a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+</script>
+
+</body>
+</html>
